@@ -1,0 +1,26 @@
+L1C/L1D/L2CB/L1F linux driver, release notes.
+
+[2011-12-09] v2.0.0.6  cloud.ren
+- 1. update vlan handle to support kernel v3.1.0 and up.
+- 2. add support to linux diag.
+
+[2011-11-23] v2.0.0.5  cloud.ren
+- 1. add a device private ioctl command for internal tests.
+- 2. fix a issue that it can't compile with kernel 2.4.20.
+
+[2011-11-14] v2.0.0.4  cloud.ren
+- 1. add l2f AR8162 support.
+
+[2011-10-14] v2.0.0.3  cloud.ren
+- 1. update makefile to support kernel v3.0.0 and up.
+
+[2011-09-15] v2.0.0.2  cloud.ren
+- 1. update license information
+
+[2011-07-22] v2.0.0.1  cloud.ren
+- 1. modify the sources to work with kernel 2.4.20¡£
+- 2. clear bit11 of reg12f8, for L0s/L1 issue.
+- 3. add license informaion.
+
+[2011-06-30] v2.0.0.0  cloud.ren
+- New added.

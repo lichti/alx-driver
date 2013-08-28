@@ -1,0 +1,18 @@
+# updates for the system pci.ids file
+#
+# IMPORTANT!  Entries in this list must be sorted as they
+#             would appear in the system pci.ids file.  Entries
+#             are sorted by ven, dev, subven, subdev
+#             (numerical order).
+#
+1969  Atheros Corporation
+	1026  8113 Gigabit Ethernet Controller (LOM)
+		1969 1026  Gigabit Desktop Adapter
+	1062  8114 Fast Ethernet Controller (LOM)
+		1969 1062  100M Desktop Adapter
+	1063  8115 Fast Ethernet Controller (LOM)
+		1969 1063  100M Desktop Adapter
+	1066  8132 Fast Ethernet Controller (LOM)
+		1969 1066  100M Desktop Adapter
+	1067  8131 Gigabit Ethernet Controller (LOM)
+		1969 1067  Gigabit Desktop Adapter

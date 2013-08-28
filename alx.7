@@ -1,0 +1,119 @@
+.\" LICENSE
+.\"
+.\" This software program is released under the terms of a license agreement between you ('Licensee') and Atheros. Do not use or load this software or any associated materials (collectively, the 'Software') until you have carefully read the full terms and conditions of the LICENSE located in this software package. By loading or using the Software, you agree to the terms of this Agreement. If you do not agree with the terms of this Agreement, do not install or use the Software.
+.\"
+.\" * Other names and brands may be claimed as the property of others.
+.\"
+.TH alx 1 "August 10, 2005"
+
+
+.SH NAME
+alx \-This file describes the Linux* Base Driver for the Atheros(R) AR8131/AR8151/AR8152/AR8161 PCI-E Ethernet Adapters.
+
+
+.SH SYNOPSIS
+.PD 0.4v
+modprobe arl1e [<option>=<VAL1>,<VAL2>,...]
+.br
+insmod arl1e [<option>=<VAL1>,<VAL2>,...]
+.PD 1v
+.LP
+
+
+.SH DESCRIPTION
+This driver is intended for \fB2.4.x\fR and \fB2.6.x\fR kernels. This driver includes support for Itanium(R)2-based systems.
+.LP
+This driver is only supported as a loadable module at this time. Atheros is not supplying patches against the kernel source to allow for static linking of the driver. For questions related to hardware requirements, refer to the documentation supplied with your Atheros AR8131/AR8151/AR8152/AR8161 adapter. All hardware requirements listed apply to use with Linux.
+.LP
+
+
+.SH OPTIONS
+The following optional parameters are used by entering them on the command line with the modprobe or insmod command. 
+For example, with two AR8131/AR8151/AR8152/AR8161 PCI-E adapters, entering:
+.IP
+.B modprobe arl1e TxMemSize=8,10
+.LP
+loads the arl1e driver with 8KB TX memory for the first adapter and 10KB TX memory for the second adapter.
+.PP
+.LP
+.B int_mod_timer
+.IP
+.B Valid Range: 
+50-65000
+.IP
+.B Default Value: 
+100
+.IP
+represents the minmum interval between interrupts controller generated.
+.LP
+.B media_type
+.IP
+.B Valid Settings: 
+0(auto-negotiate at all supported speeds), 1(only link at 1000Mbps Full Duplex), 2(only link at 100Mbps Full Duplex), 3(only link at 100Mbps Half Duplex), 4(only link at 10Mbps Full Duplex), 5(only link at 10Mbps Half Duplex)
+.br
+.B Default Value: 
+0 (auto-negotiate at all supported speeds)
+.IP
+forces the line speed to the specified value in megabits per second (Mbps). If this parameter is not specified or is set to 0 and the link partner is set to auto-negotiate, the board auto-detects the correct speed. 
+.LP
+.B TxMemSize
+.IP
+.B Valid Range: 
+4-64
+.br
+.B Default Value: 
+8
+.IP
+number KB of transmit memory allocated by the driver. Increasing this value allows the driver to queue more transmits.
+.LP
+NOTE: Depending on the available system resources, the request for a higher number of transmit descriptors may be denied.  In this case, use a lower number.
+.LP
+.B RxMemBlock
+.IP
+.B Valid Range: 
+16-512
+.br
+.B Default Value: 
+64
+.IP
+number of receice memory block allocated by the driver. Increasing this value allows the driver to buffer more incoming packets. Each memory block is 1536 bytes.
+.LP
+NOTE: Depending on the available system resources, the request for a higher number of receive memory block may be denied.  In this case, use a lower number.
+.LP
+.B FlashVendor
+.IP
+.B Valid Range: 
+0(Atmel), 1(SST), 2(ST)
+.br
+.B Default Value: 
+0
+.IP
+vendor of spi flash used by the ethernet Adapter.
+.LP
+
+
+.SH NAPI
+.LP
+NAPI (Rx polling mode) is supported in the alx driver.  NAPI is enabled or disabled based on the configuration of the kernel.  To override the default, use the following compile-time flags.  
+.IP
+To enable NAPI, compile the driver module, passing in a configuration option:
+.IP
+make CFLAGS_EXTRA=-DAT_NAPI install
+.IP
+To disable NAPI, compile the driver module, passing in a configuration option:
+.IP
+make CFLAGS_EXTRA=-DAT_NO_NAPI install
+.LP
+See www.cyberus.ca/~hadi/usenix-paper.tgz for more information on NAPI.
+
+
+.SH SUPPORT
+.LP
+For additional information, including supported adapters, building, and installation, see the Readme file included with the driver.
+.LP
+For general information, go to the Atheros support website at:
+.IP
+.B http://support.atheros.com
+.LP
+If an issue is identified with the released source code on the supported kernel with a supported adapter, email the specific information related to the issue to xiong.huang@atheros.com.
+.LP

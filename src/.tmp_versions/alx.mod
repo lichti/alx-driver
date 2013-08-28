@@ -1,0 +1,2 @@
+/home/administrador/alx-linux-v2.0.0.6/src/alx.ko
+/home/administrador/alx-linux-v2.0.0.6/src/alx_main.o /home/administrador/alx-linux-v2.0.0.6/src/alx_param.o /home/administrador/alx-linux-v2.0.0.6/src/alx_ethtool.o /home/administrador/alx-linux-v2.0.0.6/src/alx_compat.o /home/administrador/alx-linux-v2.0.0.6/src/alf_cb.o /home/administrador/alx-linux-v2.0.0.6/src/alf_hw.o /home/administrador/alx-linux-v2.0.0.6/src/alc_cb.o /home/administrador/alx-linux-v2.0.0.6/src/alc_hw.o
